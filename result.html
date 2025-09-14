@@ -1,0 +1,81 @@
+{% extends 'dosha_analysis/base.html' %}
+{% load static %}
+{% load form_filters %}
+{% block content %}
+
+        <!-- About Start -->
+        <div class="container-fluid overflow-hidden py-5">
+            <div class="container py-5">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header text-center">
+                                    <h2>Your Dosha Type</h2>
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="text-center">You are predominantly <strong style="font-size: 40px;color:#16bf16;">{{ dosha }}!!!</strong></h3>
+            
+                                    <!-- Dosha-specific suggestions -->
+                                    {% if dosha == "Vata" %}
+                                    <div class="alert alert-primary mt-4">
+                                        <h4 class="mb-4 fw-800">Suggestions for Vata Dosha</h4>
+                                        <h5 class="mb-4">Dietary Suggestions:</h5>
+                                        <ul>
+                                            <li>Favor warm, moist, grounding foods like soups, root vegetables, and healthy fats.</li>
+                                            <li>Avoid cold, raw, and dry foods like salads, crackers, and cold drinks.</li>
+                                        </ul>
+                                        <h5 class="mb-4">Lifestyle Suggestions:</h5>
+                                        <ul>
+                                            <li>Stick to a regular routine and prioritize warmth in your environment.</li>
+                                            <li>Gentle exercises like yoga and meditation are ideal for Vata types.</li>
+                                        </ul>
+                                    </div>
+            
+                                    {% elif dosha == "Pitta" %}
+                                    <div class="alert alert-warning mt-4">
+                                        <h4 class="mb-4 fw-800">Suggestions for Pitta Dosha</h4>
+                                        <h5 class="mb-4">Dietary Suggestions:</h5>
+                                        <ul>
+                                            <li>Favor cooling, hydrating foods like cucumbers, leafy greens, and melons.</li>
+                                            <li>Avoid spicy, salty, and fried foods as they increase heat in the body.</li>
+                                        </ul>
+                                        <h5 class="mb-4">Lifestyle Suggestions:</h5>
+                                        <ul>
+                                            <li>Engage in cooling activities like swimming and avoid excessive heat.</li>
+                                            <li>Practice calming activities like meditation and stay hydrated.</li>
+                                        </ul>
+                                    </div>
+            
+                                    {% elif dosha == "Kapha" %}
+                                    <div class="alert alert-success mt-4">
+                                        <h4 class="mb-4 fw-800">Suggestions for Kapha Dosha</h4>
+                                        <h5 class="mb-4">Dietary Suggestions:</h5>
+                                        <ul>
+                                            <li>Favor light, warm, and spicy foods like leafy greens, lean proteins, and warming spices.</li>
+                                            <li>Avoid heavy, oily, and sugary foods like dairy, fried foods, and sweets.</li>
+                                        </ul>
+                                        <h5 class="mb-4">Lifestyle Suggestions:</h5>
+                                        <ul>
+                                            <li>Stay active with dynamic exercise like jogging or cycling to avoid sluggishness.</li>
+                                            <li>Break up routine activities and avoid naps to maintain energy levels.</li>
+                                        </ul>
+                                    </div>
+                                    {% endif %}
+                                </div>
+            
+                                <!-- Dosha scores -->
+                                <!--<div class="card-footer text-center">
+                                    <h5>Your Dosha Scores:</h5>
+                                    <p>Vata: {{ vata_score }} | Pitta: {{ pitta_score }} | Kapha: {{ kapha_score }}</p>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                
+                
+            </div>
+        </div>
+        <!-- About End -->
+{% endblock %}
+
+
