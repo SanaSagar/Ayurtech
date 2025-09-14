@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AyurTech - Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Background Gradient */
+    body {
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Floating Circles */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      animation: float 6s ease-in-out infinite, rotate 6s linear infinite;
+    }
+
+    .circle1 {
+      width: 80px;
+      height: 80px;
+      top: 50px;
+      left: 50px;
+      animation-delay: 0s;
+    }
+
+    .circle2 {
+      width: 120px;
+      height: 120px;
+      bottom: 60px;
+      right: 60px;
+      animation-delay: 2s;
+    }
+
+    .circle3 {
+      width: 60px;
+      height: 60px;
+      bottom: 100px;
+      left: 80px;
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(180deg); }
+    }
+
+    /* Card */
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      z-index: 10;
+    }
+
+    .brand-title {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn-ayurtech {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-ayurtech:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    /* Right Panel */
+    .gradient-custom-ayurtech {
+      background: linear-gradient(135deg, rgba(180, 179, 222, 0.9), rgba(191, 170, 200, 0.9));
+      color: rgb(0, 0, 0);
+      padding: 5rem;
+      border-radius: 0 20px 20px 0;
+      text-align: left;
+    }
+
+    .feature-list {
+      margin-top: 1rem;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .feature-list li {
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    .feature-list i {
+      margin-right: 10px;
+      color: #ffd369;
+    }
+
+    .quote {
+      margin-top: 10rem;
+      font-size: 0.9rem;
+      font-style: italic;
+      opacity: 0.9;
+    }
+
+    .text-link {
+      color: #667eea;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+    .text-link:hover { text-decoration: underline; color: #764ba2; }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Background Circles -->
+  <div class="circle circle1"></div>
+  <div class="circle circle2"></div>
+  <div class="circle circle3"></div>
+
+  <!-- Login Card -->
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black shadow-lg">
+          <div class="row g-0">
+
+            <!-- Left Form Panel -->
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+              <div class="card-body p-4" style="max-width: 400px; width: 100%;">
+                <div class="text-center mb-4">
+                  <h2 class="brand-title">AyurTech</h2>
+                  <p class="text-muted">Ancient Wisdom, Modern Technology</p>
+                </div>
+
+                <form method="post" id="loginForm">
+                  <p class="mb-4 text-muted text-center">Please sign in to your account</p>
+
+                  <div class="mb-3">
+                    <label class="form-label" for="username">
+                      <i class="fas fa-user me-2"></i>Username
+                    </label>
+                    <input type="text" id="username" name="username"
+                           class="form-control" placeholder="Enter your username" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label" for="password">
+                      <i class="fas fa-lock me-2"></i>Password
+                    </label>
+                    <input type="password" id="password" name="password"
+                           class="form-control" placeholder="Enter your password" required>
+                  </div>
+
+                  <div class="mb-3 form-check">
+                    
+                    <label class="form-check-label" for="rememberMe">      </label>
+                  </div>
+
+                  <div class="text-center mb-3">
+                    <button class="btn btn-ayurtech w-100 py-2" type="submit">
+                      <i class="fas fa-sign-in-alt me-2"></i>Sign In
+                    </button>
+                  </div>
+
+                  <div class="text-center">
+                    <a class="text-link me-3" href="#">Forgot password?</a>
+                    <a class="text-link" href="#">Create Account</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Right Info Panel -->
+            <div class="col-lg-6 d-flex align-items-left gradient-custom-ayurtech">
+              <div class="w-100">
+                <h4><i class="fas fa-leaf me-2"></i> Welcome to AyurTech</h4>
+                <p class="mt-3">
+                 Discover the future of holistic healing with AyurTech.  
+                  We bring you the wisdom of Ayurveda combined with the intelligence of modern technology.
+                  Our mission is to provide personalized health insights, dosha analysis, and lifestyle 
+                    recommendations using AI-driven solutions.
+
+
+                </p>
+
+                
+
+                <p class="quote">
+                    
+                  <i class="fas fa-quote-right me-2"></i>
+                  "When ancient knowledge meets modern intelligence, wellness becomes not just treatment, but transformation."
+                  
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
